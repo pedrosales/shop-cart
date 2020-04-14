@@ -53,11 +53,11 @@ export function cartReducer(
 
                 let products = state.products.slice();
                 products.splice(index, 1);
-                return state = {
+                return {
                     ...state,
                     products: products,
                     total: calculateTotal(products)
-                }
+                };
             };
 
         case ActionTypes.Clear:
