@@ -6,6 +6,7 @@ import { RouterModule } from '@angular/router';
 
 import { HomePage } from './home.page';
 import { NavbarComponent } from '../components/navbar/navbar.component';
+import { ProductListComponent } from '../components/product-list/product-list.component';
 
 @NgModule({
   imports: [
@@ -21,7 +22,8 @@ import { NavbarComponent } from '../components/navbar/navbar.component';
   ],
   declarations: [
     HomePage,
-    NavbarComponent
+    NavbarComponent,
+    ProductListComponent
   ]
 })
 export class HomePageModule { }

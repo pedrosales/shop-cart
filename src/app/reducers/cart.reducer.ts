@@ -12,11 +12,30 @@ export function cartReducer(
     switch (action.type) {
         case ActionTypes.Add:
             {
-                state.products.push(action.payload);
-                state.total = calculateTotal(state.products);
+                //console.log(state);
+                // console.log(action.payload);
+                // state.products.push(action.payload);
+                // state.total = calculateTotal(state.products);
 
-                console.log(state);
-                return state;
+                // console.log(state);
+                // return state;
+
+                let estado = {
+                    ...state,
+                    products: [
+                        ...state.products,
+                        action.payload
+                    ]
+                };
+                console.log(estado);
+                return {
+                    ...state,
+                    products: [
+                        ...state.products,
+                        action.payload
+                    ],
+                    total: calculateTotal(estado.products)
+                };
             };
 
         case ActionTypes.Remove:
@@ -48,6 +67,6 @@ function calculateTotal(products: ProductModel[]): number {
     products.forEach(product => {
         total += product.price;
     });
-
+    console.log(total);
     return total;
 }

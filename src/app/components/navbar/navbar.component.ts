@@ -21,4 +21,7 @@ export class NavbarComponent implements OnInit {
 
   }
 
+  logState() {
+    console.log(this.cart$);
+  }
 }
