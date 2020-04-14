@@ -20,32 +20,44 @@ export function cartReducer(
                 // console.log(state);
                 // return state;
 
-                let estado = {
+                state = {
                     ...state,
                     products: [
                         ...state.products,
                         action.payload
                     ]
                 };
-                console.log(estado);
+                console.log(state);
                 return {
                     ...state,
-                    products: [
-                        ...state.products,
-                        action.payload
-                    ],
-                    total: calculateTotal(estado.products)
+                    total: calculateTotal(state.products)
                 };
             };
 
         case ActionTypes.Remove:
             {
                 const index = state.products.indexOf(action.payload);
-                state.products.splice(index, 1);
-                state.total = calculateTotal(state.products);
+                // state.products.splice(index, 1);
+                // state.total = calculateTotal(state.products);
+                // let newState = [...state.products];
+                // state.products = newState.splice(index, 1);
+                // state.total = calculateTotal(state.products);
+                // state = {
+                //     ...state,
+                //     products: [
+                //         ...state.products.filter((item) => item._id != action.payload._id)
+                //     ]
+                // }
 
-                console.log(state);
-                return state;
+                // console.log(state);
+
+                let products = state.products.slice();
+                products.splice(index, 1);
+                return state = {
+                    ...state,
+                    products: products,
+                    total: calculateTotal(products)
+                }
             };
 
         case ActionTypes.Clear:
