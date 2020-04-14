@@ -7,7 +7,7 @@
       eShop
     </ion-title>
     <ion-buttons slot="end">
-      <ion-button (click)="logState()">
+      <ion-button>
         <ion-icon slot="start" name="cart"></ion-icon>
         <ion-badge color="danger">
           {{ (cart$ | async).products.length }}

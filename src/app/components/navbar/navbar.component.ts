@@ -20,8 +20,4 @@ export class NavbarComponent implements OnInit {
   ngOnInit() {
 
   }
-
-  logState() {
-    console.log(this.cart$);
-  }
 }
